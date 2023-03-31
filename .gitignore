@@ -1,3 +1,7 @@
+html/
+
+Makefile.*
+
 .*.aux
 .*.d
 *.a
