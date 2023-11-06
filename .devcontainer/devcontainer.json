@@ -1,6 +1,8 @@
 {
-    // Use the official Coq Docker image.
-    "image": "coqorg/coq",
+    // Use a slightly modified Coq Docker image, to also include the VSCode language server.
+    "build": {
+        "dockerfile": "Dockerfile.coq"
+    },
     "customizations": {
         "vscode": {
             "extensions": [
@@ -13,6 +15,9 @@
             "settings": {
                 // Font ligatures are nice in this case.
                 "editor.fontLigatures": true,
+                // Font size is broken with VSCoq, so you need to zoom.
+                "editor.fontSize": 13,
+                "window.zoomLevel": 2,
                 "[coq]": {
                     "editor.tabSize": 2,
                     // Because we want to use fancy Unicode characters sometimes.
