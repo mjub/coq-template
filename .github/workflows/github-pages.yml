@@ -6,10 +6,11 @@ on:
 jobs:
   build-artifact:
     runs-on: ubuntu-latest
+    container: archlinux
 
     steps:
       - name: Install Coq
-        run: sudo apt-get -y install coq
+        run: pacman -Sy --noconfirm base-devel coq
 
       - name: Checkout
         uses: actions/checkout@v4
